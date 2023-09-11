@@ -8,6 +8,8 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.cfg.Environment;
 import org.hibernate.service.ServiceRegistry;
 
+import com.entities.Student;
+
 
 public class HibernateUtils {
     private static SessionFactory sessionFactory;
@@ -30,7 +32,7 @@ public class HibernateUtils {
                 settings.put(Environment.HBM2DDL_AUTO, "update");
 
                 configuration.setProperties(settings);
-
+                configuration.addAnnotatedClass(Student.class);
 
                 ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
                     .applySettings(configuration.getProperties()).build();
