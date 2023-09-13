@@ -48,6 +48,7 @@ public class Main {
 		List<Student> students = dao.getAllStudents();
 		for(Student student : students ) {
 			System.out.println(student);
+			
 		}
 	}
 }
