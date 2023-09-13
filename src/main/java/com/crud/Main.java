@@ -47,8 +47,8 @@ public class Main {
 		dao.delete(1);
 		List<Student> students = dao.getAllStudents();
 		for(Student student : students ) {
-			System.out.println(student);
 			
+			System.out.println(student);	
 		}
 	}
 }
