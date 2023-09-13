@@ -33,8 +33,9 @@ public class HibernateUtils {
                 settings.put(Environment.HBM2DDL_AUTO, "update");
 
                 configuration.setProperties(settings);
-                configuration.addAnnotatedClass(Student.class);
+//                configuration.addAnnotatedClass(Student.class);
                 configuration.addAnnotatedClass(EmployeeAnotationExample.class);
+                configuration.addAnnotatedClass(com.crud.Student.class);
 
                 ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
                     .applySettings(configuration.getProperties()).build();
