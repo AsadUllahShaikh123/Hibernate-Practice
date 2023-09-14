@@ -10,6 +10,8 @@ import org.hibernate.service.ServiceRegistry;
 
 import com.entities.EmployeeAnotationExample;
 import com.entities.Student;
+import com.mapping.Chancellor;
+import com.mapping.University;
 
 
 public class HibernateUtils {
@@ -36,6 +38,8 @@ public class HibernateUtils {
 //                configuration.addAnnotatedClass(Student.class);
                 configuration.addAnnotatedClass(EmployeeAnotationExample.class);
                 configuration.addAnnotatedClass(com.crud.Student.class);
+                configuration.addAnnotatedClass(University.class);
+                configuration.addAnnotatedClass(Chancellor.class);
 
                 ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
                     .applySettings(configuration.getProperties()).build();
