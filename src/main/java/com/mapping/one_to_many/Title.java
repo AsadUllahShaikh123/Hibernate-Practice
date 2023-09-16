@@ -15,7 +15,8 @@ public class Title {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	private String title;
-	@OneToMany
+	
+	@OneToMany (mappedBy = "title")
 	private List<Publisher> publisher;
 	public List<Publisher> getPublisher() {
 		return publisher;

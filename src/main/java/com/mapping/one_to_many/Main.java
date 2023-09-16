@@ -25,8 +25,12 @@ public class Main {
 		list.add(pb3);
 		
 		Title title = new Title();
-		title.setTitle("Java Programming Language");
+		title.setTitle("Java Development");
 		title.setPublisher(list);
+		
+		pb1.setTitle(title);
+		pb2.setTitle(title);
+		pb3.setTitle(title);
 		
 		
 		Session session = factory.openSession();
@@ -37,6 +41,20 @@ public class Main {
 		session.persist(pb3);
 		
 		session.persist(title);
+		
+		// Retriving Data 
+		
+//		Title titles = session.get(Title.class, 1);
+//		System.out.println("Publishers of "+titles.getTitle()+" are ");
+//		for(Publisher publisher : titles.getPublisher()) {
+//			System.out.print(publisher.getName() +" ");
+//		}
+		
+		Publisher publisher = session.get(Publisher.class, 1);
+		
+		System.out.print("publisher Name : " + publisher.getName());
+		System.out.println("Published " + publisher.getTitle().getTitle());
+		
 		
 		session.getTransaction().commit();
 		
