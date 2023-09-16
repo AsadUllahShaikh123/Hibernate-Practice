@@ -12,6 +12,8 @@ import com.entities.EmployeeAnotationExample;
 import com.entities.Student;
 import com.mapping.Chancellor;
 import com.mapping.University;
+import com.mapping.one_to_many.Publisher;
+import com.mapping.one_to_many.Title;
 
 
 public class HibernateUtils {
@@ -36,10 +38,12 @@ public class HibernateUtils {
 
                 configuration.setProperties(settings);
 //                configuration.addAnnotatedClass(Student.class);
-                configuration.addAnnotatedClass(EmployeeAnotationExample.class);
-                configuration.addAnnotatedClass(com.crud.Student.class);
-                configuration.addAnnotatedClass(University.class);
-                configuration.addAnnotatedClass(Chancellor.class);
+//                configuration.addAnnotatedClass(EmployeeAnotationExample.class);
+//                configuration.addAnnotatedClass(com.crud.Student.class);
+//                configuration.addAnnotatedClass(University.class);
+//                configuration.addAnnotatedClass(Chancellor.class);
+                configuration.addAnnotatedClass(Title.class);
+                configuration.addAnnotatedClass(Publisher.class);
 
                 ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
                     .applySettings(configuration.getProperties()).build();
