@@ -44,14 +44,14 @@ public class HibernateUtils {
 //                configuration.addAnnotatedClass(Student.class);
 //                configuration.addAnnotatedClass(EmployeeAnotationExample.class);
 //                configuration.addAnnotatedClass(com.crud.Student.class);
-//                configuration.addAnnotatedClass(University.class);
-//                configuration.addAnnotatedClass(Chancellor.class);
+                configuration.addAnnotatedClass(University.class);
+                configuration.addAnnotatedClass(Chancellor.class);
 //                configuration.addAnnotatedClass(Title.class);
 //                configuration.addAnnotatedClass(Publisher.class);
 //                  configuration.addAnnotatedClass(Question.class);
 //                  configuration.addAnnotatedClass(Answer.class);
-                configuration.addAnnotatedClass(Post.class);
-                configuration.addAnnotatedClass(PostComment.class);
+//                configuration.addAnnotatedClass(Post.class);
+//                configuration.addAnnotatedClass(PostComment.class);
                 ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
                     .applySettings(configuration.getProperties()).build();
 
