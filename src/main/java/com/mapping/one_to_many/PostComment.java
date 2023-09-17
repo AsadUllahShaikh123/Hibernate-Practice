@@ -5,6 +5,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -18,6 +19,8 @@ public class PostComment {
 	private String comment;
 	
 	@ManyToOne ( fetch = FetchType.LAZY )
+	// Here it shows that there will be a foreign key of name posts_id which will store post id in the Post Comment table
+	@JoinColumn(name="posts_id")
 	private Post post;
 	
 	public Post getPost() {

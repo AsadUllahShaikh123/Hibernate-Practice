@@ -28,7 +28,7 @@ public class Gui {
 		comments.add(comment3);
 		
 		Post post = new Post();
-		post.setTitle(" Will Python Beat Java ? ");
+		post.setTitle(" Will Java Beat Python ? ");
 		post.setComments(comments);
 		
 		comment1.setPost(post);
@@ -39,32 +39,32 @@ public class Gui {
 		Session session = factory.openSession();
 		session.beginTransaction();
 		
-//		session.save(comment1);
-//		session.save(comment2);
-//		session.save(comment3);
-//		
-//		session.save(post);
+		session.save(comment1);
+		session.save(comment2);
+		session.save(comment3);
+		
+		session.save(post);
 		
 //		Post fetchedPost = session.get(Post.class, 1);
 //		session.remove(fetchedPost);
 		
 		
 		// =============== Fetching by using Post ===================
-//		Post fetchedPost = session.get(Post.class, 1);
-//		
-//		
-//		List<PostComment> postComments = fetchedPost.getComments();
-//		System.out.print("\n" + fetchedPost.getTitle());
-//		for(PostComment postComment : postComments) {
-//			System.out.print(" " + postComment.getComment());
-//		}
+		Post fetchedPost = session.get(Post.class, 1);
+		
+		
+		List<PostComment> postComments = fetchedPost.getComments();
+		System.out.print("\n" + fetchedPost.getTitle());
+		for(PostComment postComment : postComments) {
+			System.out.print(" " + postComment.getComment());
+		}
 		
        // ============= Now Fetching by using Post Comment Bidirectional ==========
 		
-//		PostComment commentFetch = session.get(PostComment.class, 1);
-//		
-//		System.out.println(commentFetch.getComment());
-//		System.out.println(commentFetch.getPost().getTitle());
+		PostComment commentFetch = session.get(PostComment.class, 1);
+		
+		System.out.println(commentFetch.getComment());
+		System.out.println(commentFetch.getPost().getTitle());
 		
 		
 		
