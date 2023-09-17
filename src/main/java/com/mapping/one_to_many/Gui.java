@@ -15,31 +15,34 @@ public class Gui {
 		List<PostComment> comments = new ArrayList<PostComment>();
 		
 		PostComment comment1 = new PostComment();
-		comment1.setComment("Nice Blog");
+		comment1.setComment("Need to imporve");
 
 		PostComment comment2 = new PostComment();
 		comment2.setComment("Very Helpful");
 		
 		PostComment comment3 = new PostComment();
-		comment3.setComment("Helpfull content");
+		comment3.setComment("Valuable Share");
 		
 		comments.add(comment1);
 		comments.add(comment2);
 		comments.add(comment3);
 		
 		Post post = new Post();
-		post.setTitle("How Java Persistence Works ? ");
+		post.setTitle(" Will Python Beat Java ? ");
 		post.setComments(comments);
 		
 		SessionFactory factory = HibernateUtils.getSessionFactory();
 		Session session = factory.openSession();
 		session.beginTransaction();
 		
-		session.save(comment1);
-		session.save(comment2);
-		session.save(comment3);
+//		session.save(comment1);
+//		session.save(comment2);
+//		session.save(comment3);
+//		
+//		session.save(post);
 		
-		session.save(post);
+		Post fetchedPost = session.get(Post.class, 1);
+		session.remove(fetchedPost);
 		
 		
 //		Post fetchedPost = session.get(Post.class, 1);

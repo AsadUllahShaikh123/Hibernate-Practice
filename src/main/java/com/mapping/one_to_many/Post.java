@@ -3,6 +3,7 @@ package com.mapping.one_to_many;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,7 +20,7 @@ public class Post {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String title;
-	@OneToMany
+	@OneToMany(cascade = CascadeType.ALL ,orphanRemoval = true)
 	@JoinColumn(name="posts_id")
 	private List<PostComment> comments = new ArrayList<PostComment>();
 	
