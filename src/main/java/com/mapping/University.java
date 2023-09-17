@@ -14,7 +14,7 @@ public class University {
 	private int id;
 	private String name;
 	private String address;
-	@OneToOne
+	@OneToOne(mappedBy="university")
 	private Chancellor chancellor;
 	
 	public Chancellor getChancellor() {
