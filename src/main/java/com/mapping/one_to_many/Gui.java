@@ -31,6 +31,10 @@ public class Gui {
 		post.setTitle(" Will Python Beat Java ? ");
 		post.setComments(comments);
 		
+		comment1.setPost(post);
+		comment2.setPost(post);
+		comment3.setPost(post);
+		
 		SessionFactory factory = HibernateUtils.getSessionFactory();
 		Session session = factory.openSession();
 		session.beginTransaction();
@@ -41,10 +45,11 @@ public class Gui {
 //		
 //		session.save(post);
 		
-		Post fetchedPost = session.get(Post.class, 1);
-		session.remove(fetchedPost);
+//		Post fetchedPost = session.get(Post.class, 1);
+//		session.remove(fetchedPost);
 		
 		
+		// =============== Fetching by using Post ===================
 //		Post fetchedPost = session.get(Post.class, 1);
 //		
 //		
@@ -53,6 +58,13 @@ public class Gui {
 //		for(PostComment postComment : postComments) {
 //			System.out.print(" " + postComment.getComment());
 //		}
+		
+       // ============= Now Fetching by using Post Comment Bidirectional ==========
+		
+//		PostComment commentFetch = session.get(PostComment.class, 1);
+//		
+//		System.out.println(commentFetch.getComment());
+//		System.out.println(commentFetch.getPost().getTitle());
 		
 		
 		

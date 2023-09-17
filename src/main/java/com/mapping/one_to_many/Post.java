@@ -20,8 +20,8 @@ public class Post {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String title;
-	@OneToMany(cascade = CascadeType.ALL ,orphanRemoval = true)
-	@JoinColumn(name="posts_id")
+	@OneToMany(mappedBy = "post", cascade = CascadeType.ALL ,orphanRemoval = true)
+	// The @JoinColumn helps hibernate to figure out that posts_id in the POST_COMMENT table is responsible for association
 	private List<PostComment> comments = new ArrayList<PostComment>();
 	
 	public int getId() {
