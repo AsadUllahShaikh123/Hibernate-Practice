@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -19,6 +20,7 @@ public class Post {
 	private int id;
 	private String title;
 	@OneToMany
+	@JoinColumn(name="posts_id")
 	private List<PostComment> comments = new ArrayList<PostComment>();
 	
 	public int getId() {

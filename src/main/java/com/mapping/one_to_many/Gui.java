@@ -35,21 +35,21 @@ public class Gui {
 		Session session = factory.openSession();
 		session.beginTransaction();
 		
-//		session.save(comment1);
-//		session.save(comment2);
-//		session.save(comment3);
+		session.save(comment1);
+		session.save(comment2);
+		session.save(comment3);
+		
+		session.save(post);
+		
+		
+//		Post fetchedPost = session.get(Post.class, 1);
 //		
-//		session.save(post);
-		
-		
-		Post fetchedPost = session.get(Post.class, 1);
-		
-		
-		List<PostComment> postComments = fetchedPost.getComments();
-		System.out.print("\n" + fetchedPost.getTitle());
-		for(PostComment postComment : postComments) {
-			System.out.print(" " + postComment.getComment());
-		}
+//		
+//		List<PostComment> postComments = fetchedPost.getComments();
+//		System.out.print("\n" + fetchedPost.getTitle());
+//		for(PostComment postComment : postComments) {
+//			System.out.print(" " + postComment.getComment());
+//		}
 		
 		
 		
